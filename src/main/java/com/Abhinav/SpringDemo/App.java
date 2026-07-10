@@ -9,7 +9,11 @@ public class App {
        
         //Dependency Injection
         //1. Setter injection
+//        Car car = (Car) ctx.getBean("car");
+//        System.out.println("Car battery remainig: " + car.getBattery()+ "%");
+        
+        //2. Field injection
         Car car = (Car) ctx.getBean("car");
-        System.out.println("Car battery remainig: " + car.getBattery()+ "%");
+        car.getCarDetails();
     }
 }
