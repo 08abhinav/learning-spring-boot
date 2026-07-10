@@ -5,13 +5,17 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
    <!-- Setter injection
-   -->
     <bean id="car" class="com.Abhinav.SpringDemo.Car">
     	<property name="battery" value="85"></property>
     </bean>
+   -->
    
-    
+    <!-- Field injection   -->
+    <bean id="car" class="com.Abhinav.SpringDemo.Car">
+    	<property name="battery" value="85"></property>
+    	<property name="engine" ref="engine"></property>
+    </bean>
+      <bean id="engine" class="com.Abhinav.SpringDemo.Engine">
+    </bean>
    
-   
-
 </beans>
