@@ -10,10 +10,20 @@
     </bean>
    -->
    
-    <!-- Field injection   -->
+    <!-- Field injection   
     <bean id="car" class="com.Abhinav.SpringDemo.Car">
     	<property name="battery" value="85"></property>
     	<property name="engine" ref="engine"></property>
+    </bean>
+      <bean id="engine" class="com.Abhinav.SpringDemo.Engine">
+    </bean>
+    -->
+    
+    <!-- Constructor injection   
+    -->
+    <bean id="car" class="com.Abhinav.SpringDemo.Car">
+    	<constructor-arg name="battery" value="69"></constructor-arg>
+    	<constructor-arg name="engine" ref="engine"></constructor-arg>
     </bean>
       <bean id="engine" class="com.Abhinav.SpringDemo.Engine">
     </bean>
