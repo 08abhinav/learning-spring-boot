@@ -30,7 +30,9 @@
     
     <!-- Bean scope
     	Default scope is Singleton 
-    -->
      <bean id="car" class="com.Abhinav.SpringDemo.Car"></bean>
+    -->
+    
+    <bean id="car" class="com.Abhinav.SpringDemo.Car" scope="prototype"></bean>
    
 </beans>
