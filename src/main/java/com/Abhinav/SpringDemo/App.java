@@ -17,8 +17,20 @@ public class App {
 //        car.getCarDetails();
         
         //3. Constructor injection
+//        Car car = (Car) ctx.getBean("car");
+//        car.getCarDetails();	
+        
+        //Bean Scope
+        //1.Singleton Scope
         Car car = (Car) ctx.getBean("car");
-        car.getCarDetails();	
+        car.setBatter(99);
+        car.getCarDetails();
+        
+        Car car2 = (Car) ctx.getBean("car");
+        car2.setBatter(15);
+        car2.getCarDetails();
+        
+        
       
     }
 }
