@@ -20,12 +20,17 @@
     -->
     
     <!-- Constructor injection   
-    -->
     <bean id="car" class="com.Abhinav.SpringDemo.Car">
     	<constructor-arg name="battery" value="69"></constructor-arg>
     	<constructor-arg name="engine" ref="engine"></constructor-arg>
     </bean>
       <bean id="engine" class="com.Abhinav.SpringDemo.Engine">
     </bean>
+    -->
+    
+    <!-- Bean scope
+    	Default scope is Singleton 
+    -->
+     <bean id="car" class="com.Abhinav.SpringDemo.Car"></bean>
    
 </beans>
