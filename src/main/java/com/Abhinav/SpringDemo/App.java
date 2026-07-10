@@ -13,7 +13,12 @@ public class App {
 //        System.out.println("Car battery remainig: " + car.getBattery()+ "%");
         
         //2. Field injection
+//        Car car = (Car) ctx.getBean("car");
+//        car.getCarDetails();
+        
+        //3. Constructor injection
         Car car = (Car) ctx.getBean("car");
-        car.getCarDetails();
+        car.getCarDetails();	
+      
     }
 }
