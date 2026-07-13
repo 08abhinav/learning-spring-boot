@@ -23,8 +23,18 @@ public class Main {
 //		transaction.commit();
 		
 		// Fetching the entry
-		Student s1 = session.find(Student.class, 102);
-		System.out.println(s1);
+//		Student s1 = session.find(Student.class, 102);
+//		System.out.println(s1);
+		
+		// Updating the existing entry
+		Transaction transaction = session.beginTransaction();
+		Student s2 = new Student();
+		s2.setsId(102);
+		s2.setsName("Updated Second Entry");
+		s2.setsTech("Cloud Native");
+		
+		session.merge(s2);
+		transaction.commit();
 		
 		session.close();
 		factory.close();
