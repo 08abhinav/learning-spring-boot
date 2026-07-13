@@ -16,9 +16,8 @@ public class Main {
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		Session session = factory.openSession();
 		
+		Transaction transaction = session.beginTransaction();
 		// Creating First entry
-//		Transaction transaction = session.beginTransaction();
-//	
 //		session.persist(s);
 //		transaction.commit();
 		
@@ -27,13 +26,17 @@ public class Main {
 //		System.out.println(s1);
 		
 		// Updating the existing entry
-		Transaction transaction = session.beginTransaction();
-		Student s2 = new Student();
-		s2.setsId(102);
-		s2.setsName("Updated Second Entry");
-		s2.setsTech("Cloud Native");
+//		Student s2 = new Student();
+//		s2.setsId(102);
+//		s2.setsName("Updated Second Entry");
+//		s2.setsTech("Cloud Native");
+//		
+//		session.merge(s2);
+//		transaction.commit();
 		
-		session.merge(s2);
+		// Deleting the 101 entry
+		Student s3 = session.find(Student.class, 101);
+		session.remove(s3);
 		transaction.commit();
 		
 		session.close();
